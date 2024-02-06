@@ -1,10 +1,11 @@
 import pygame
 import sys
 from pygame.locals import *
-import random
 from copy import deepcopy
 import math
 from time import sleep
+import secrets
+
 pygame.font.init()
 
 
@@ -172,8 +173,8 @@ class Bot:
         if possible_moves == []:
             self.game.end_turn()
             return
-        random_move = random.choice(possible_moves)
-        rand_choice = random.choice(random_move[2])
+        random_move = secrets.SystemRandom().choice(possible_moves)
+        rand_choice = secrets.SystemRandom().choice(random_move[2])
         self._action(random_move, rand_choice, board)
         return
 
@@ -211,7 +212,7 @@ class Bot:
                             max_value = step_value
                             best_pos = pos
                             best_action = (action[0], action[1])
-                        elif step_value == max_value and random.random() <= 0.5:
+                        elif step_value == max_value and secrets.SystemRandom().random() <= 0.5:
                             max_value = step_value
                             best_pos = (pos[0], pos[1])
                             best_action = (action[0], action[1])
@@ -237,7 +238,7 @@ class Bot:
                             min_value = step_value
                             best_pos = pos
                             best_action = action
-                        elif step_value == min_value and random.random() <= 0.5:
+                        elif step_value == min_value and secrets.SystemRandom().random() <= 0.5:
                             min_value = step_value
                             best_pos = pos
                             best_action = action
@@ -271,7 +272,7 @@ class Bot:
                             max_value = step_value
                             best_pos = pos
                             best_action = action
-                        elif step_value == max_value and random.random() <= 0.5:
+                        elif step_value == max_value and secrets.SystemRandom().random() <= 0.5:
                             max_value = step_value
                             best_pos = pos
                             best_action = action
@@ -303,7 +304,7 @@ class Bot:
                             min_value = step_value
                             best_pos = (pos[0], pos[1])
                             best_action = (action[0], action[1])
-                        elif step_value == min_value and random.random() <= 0.5:
+                        elif step_value == min_value and secrets.SystemRandom().random() <= 0.5:
                             min_value = step_value
                             best_pos = pos
                             best_action = action
@@ -333,7 +334,7 @@ class Bot:
                             max_value = step_value
                             best_pos = pos
                             best_action = (action[0], action[1])
-                        elif step_value == max_value and random.random() <= 0.5:
+                        elif step_value == max_value and secrets.SystemRandom().random() <= 0.5:
                             max_value = step_value
                             best_pos = (pos[0], pos[1])
                             best_action = (action[0], action[1])
@@ -367,7 +368,7 @@ class Bot:
                             min_value = step_value
                             best_pos = pos
                             best_action = action
-                        elif step_value == min_value and random.random() <= 0.5:
+                        elif step_value == min_value and secrets.SystemRandom().random() <= 0.5:
                             min_value = step_value
                             best_pos = pos
                             best_action = action
@@ -408,7 +409,7 @@ class Bot:
                             max_value = step_value
                             best_pos = pos
                             best_action = action
-                        elif step_value == max_value and random.random() <= 0.5:
+                        elif step_value == max_value and secrets.SystemRandom().random() <= 0.5:
                             max_value = step_value
                             best_pos = pos
                             best_action = action
@@ -447,7 +448,7 @@ class Bot:
                             min_value = step_value
                             best_pos = (pos[0], pos[1])
                             best_action = (action[0], action[1])
-                        elif step_value == min_value and random.random() <= 0.5:
+                        elif step_value == min_value and secrets.SystemRandom().random() <= 0.5:
                             min_value = step_value
                             best_pos = pos
                             best_action = action
